@@ -1,23 +1,22 @@
- {% load static %}
+
   <!-- Hero Section Begin -->
- <div id = "home">
-     <div class="container">
-         <div class="home-wrap">
-             <div id="home-slick">
-                 {% for rs in sliderdata %}
-                     <div class="banner-banner-1">
-                     <img src="{{ rs.image.url }}" alt="">
+<section class="hero-section">
+    <div class="hs-slider owl-carousel">
+        {% for rs in sliderdata %}
+        <div class="hs-item set-bg" data-setbg="{{ rs.images.url }}" >
+            <div class="container">
+                    <div class="row">
                       <div class="col-lg-6 offset-lg-6">
                             <div class="hi-text">
                                 <span>{{ rs.title }} </span>
-                                <h1>Be <strong>strong</strong> traning hard</h1>
-                                <a href="#" class="primary-btn">Get info</a>
+                                <h1><strong>{{ rs.description }}</strong></h1>
+                                <a href="/product/{{ rs.id }}/{{ rs.slug }}" class="primary-btn">Get info</a>
                             </div>
-                        </div>
-                     </div>
-                 {% endfor %}
-             </div>
-         </div>
-     </div>
- </div>
+                      </div>
+                    </div>
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
     <!-- Hero Section End -->
