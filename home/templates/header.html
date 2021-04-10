@@ -43,8 +43,12 @@
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
-                    <div class="to-search search-switch">
-                        <i class="fa fa-search"></i>
+                    <div class="header-section">
+                        <form action="/search/" method="post" >
+                            {% csrf_token %}
+                            <input name="query"  >
+                           <button class="search-btn"><i class="fa fa-search"></i></button>
+                        </form>
                     </div>
                     <div class="to-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
