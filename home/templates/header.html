@@ -43,13 +43,13 @@
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
-                    <div class="header-section">
+
                         <form action="/search/" method="post" >
                             {% csrf_token %}
-                            <input name="query"  >
+                            <input name="query" class="input search-input" type="text"  >
                            <button class="search-btn"><i class="fa fa-search"></i></button>
                         </form>
-                    </div>
+
                     <div class="to-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
                         <a href="#"><i class="fa fa-twitter"></i></a>
