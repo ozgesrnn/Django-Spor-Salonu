@@ -1,6 +1,6 @@
 {% load static %}
 <!-- jQuery !-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <!-- jQuery UI !-->
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -28,10 +28,10 @@
                         <li><a href="/aboutus">About Us</a></li>
                         <li><a href="#">Categories</a>
                             {% load mptt_tags %}
-                             <ul class="dropdown">
+                            <ul class="dropdown">
                                 {% recursetree category %}
                                     <li><a href="/category/{{ node.id }}/{{ node.slug }}/">{{ node.title }}</a>
-                                         {% if not node.is_leaf_node %}
+                                        {% if not node.is_leaf_node %}
                                             <ul class="dropdown-submenu">
                                                 <li><a href="#">{{ children }}</a></li>
                                             </ul>
@@ -42,17 +42,31 @@
                         </li>
                         <li><a href="/references">References</a></li>
                         <li><a href="/contact">Contact</a></li>
+                        <li>
+                            {% if user.id is not None %}
+                                <strong class="text-uppercase">{{ user.first_name }}</strong>
+                                <ul class="dropdown">
+                                    <li><a href="/profile/">Profile</a></li>
+                                    <li><a href="/logout/">Logout</a></li>
+                                </ul>
+                            {% else %}
+                                <li><a href="/login/">Giriş Yap</a> </li>
+                                <li> <a href="/join/">Üye Ol</a></li>
+                            {% endif %}
+
+                        </li>
+                        </li>
                     </ul>
                 </nav>
             </div>
             <div class="col-lg-3">
                 <div class="top-option">
 
-                        <form action="/search/" method="post" >
-                            {% csrf_token %}
-                            <input name="query" class="input search-input" type="text"  >
-                           <button class="search-btn"><i class="fa fa-search"></i></button>
-                        </form>
+                    <form action="/search/" method="post">
+                        {% csrf_token %}
+                        <input name="query" class="input search-input" type="text">
+                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                    </form>
 
                     <div class="to-social">
                         <a href="#"><i class="fa fa-facebook"></i></a>
