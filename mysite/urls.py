@@ -22,6 +22,7 @@ from home import views
 
 urlpatterns = [
     path('', include('home.urls')), #herhangi bir şey yazmadanda çalışması için
+    path('user/', include('user.urls')),
     path('aboutus/',views.aboutus, name='aboutus'),
     path('contact/', views.contact, name='contact'),
     path('references/', views.references, name='references'),

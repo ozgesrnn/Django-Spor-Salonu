@@ -44,8 +44,10 @@
                         <li><a href="/contact">Contact</a></li>
                         <li>
                             {% if user.id is not None %}
+                                <img src="{{ request.user.profile.image.url }}">
                                 <strong class="text-uppercase">{{ user.first_name }}</strong>
                                 <ul class="dropdown">
+
                                     <li><a href="/profile/">Profile</a></li>
                                     <li><a href="/logout/">Logout</a></li>
                                 </ul>
