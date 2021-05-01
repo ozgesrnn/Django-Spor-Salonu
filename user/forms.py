@@ -31,7 +31,7 @@ class ProfileUpdateForm(forms.ModelForm):
         widgets = {
             'phone': TextInput(attrs={'class': 'input', 'placeorder': 'phone'}),
             'address': TextInput(attrs={'class': 'input', 'placeorder': 'address'}),
-            'city': TextInput(attrs={'class': 'input', 'placeorder': 'city'}, choices = CITY),
+            'city': TextInput(attrs={'class': 'input', 'placeorder': 'city'}),
             'country': TextInput(attrs={'class': 'input', 'placeorder': 'country'}),
             'image': TextInput(attrs={'class': 'input', 'placeorder': 'image',}),
 
