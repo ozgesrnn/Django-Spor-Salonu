@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
-from django.forms import TextInput
+from django.forms import TextInput, FileInput
 
 from home.models import  UserProfile
 
@@ -33,6 +33,6 @@ class ProfileUpdateForm(forms.ModelForm):
             'address': TextInput(attrs={'class': 'input', 'placeorder': 'address'}),
             'city': TextInput(attrs={'class': 'input', 'placeorder': 'city'}),
             'country': TextInput(attrs={'class': 'input', 'placeorder': 'country'}),
-            'image': TextInput(attrs={'class': 'input', 'placeorder': 'image',}),
+            'image': FileInput(attrs={'class': 'input', 'placeorder': 'image',}),
 
         }
