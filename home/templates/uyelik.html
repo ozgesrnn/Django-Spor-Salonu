@@ -43,7 +43,12 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-8">
                 <div class="ps-item">
-
+                    <h3>{{ rs.title}}</h3>
+                    <form action="/order/addtocart/{{ product.id }}" method="post">
+                        {% csrf_token %}
+                    <div class="pi-price">
+                        <span class="text-uppercase">Months :</span>
+                        <h2>$ {{ product.total }}</h2>
                         <span>SINGLE CLASS</span>
                     </div>
                     <ul>
