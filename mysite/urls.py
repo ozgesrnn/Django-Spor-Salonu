@@ -23,6 +23,7 @@ from home import views
 urlpatterns = [
     path('', include('home.urls')), #herhangi bir şey yazmadanda çalışması için
     path('user/', include('user.urls')),
+    path('order/', include('order.urls')),
     path('aboutus/',views.aboutus, name='aboutus'),
     path('contact/', views.contact, name='contact'),
     path('references/', views.references, name='references'),
@@ -37,8 +38,7 @@ urlpatterns = [
     path('login/', views.login_view, name='login_view'),
     path('join/', views.join_view, name='join_view'),
     path('faq/', views.faq, name='faq'),
-    path('uyelik/', views.uyelik, name='uyelik'),
-    path('uyelikform/', views.uyelikform, name='uyelikform'),
+
 
 ]
 
