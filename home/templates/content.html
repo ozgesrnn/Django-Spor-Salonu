@@ -173,24 +173,16 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-8">
                 <div class="ps-item">
-                    <h3>{{ rs.title}}</h3>
-                    <form action="/order/addtocart/{{ product.id }}" method="post">
-                        {% csrf_token %}
                     <div class="pi-price">
                         <span class="text-uppercase">Months :</span>
-                        <h2>$ {{ product.total }}</h2>
-                        <span>SINGLE CLASS</span>
+                        <h2>$ {{ rs.price }}</h2>
+                        <span>{{ rs.title}}</span>
                     </div>
                     <ul>
-                        <li>Free riding</li>
-                        <li>Unlimited equipments</li>
-                        <li>Personal trainer</li>
-                        <li>Weight losing classes</li>
-                        <li>Month to mouth</li>
-                        <li>No time restriction</li>
+                        <p>{{ rs.detail | safe }}</p>
                     </ul>
                     </form>
-                    <a href="/order/addtocart/{{ rs.id }}" class="primary-btn pricing-btn">Enroll now</a>
+                    <a href="/paket/{{ rs.id }}/{{ rs.slug }}" class="primary-btn pricing-btn">Satın Al</a>
                     <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
                 </div>
             </div>
