@@ -40,30 +40,30 @@
                     </div>
                 </div>
             </div>
-               <div class="row justify-content-center">
-            {% for rs in paket %}
-            <div class="col-lg-4 col-md-8">
-                <div class="ps-item">
-                    <div class="pi-price">
-                        <h2>{{ rs.title}}</h2>
-                        <span class="text-uppercase">Months :</span>
-                        <h3>$ {{ rs.price }}</h3>
-                    </div>
-                    <ul>
-                        <h2>{{ rs.detail | safe }}</h2>
-                    </ul>
-                    </form>
-                    <a href="/paket/{{ rs.id }}/{{ rs.slug }}" class="primary-btn pricing-btn">Satın Al</a>
-                    <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-
+            <div class="row justify-content-center">
+                {% for rs in paket %}
+                    <div class="col-lg-4 col-md-8">
+                        <div class="ps-item">
+                            <div class="pi-price">
+                                <h2>{{ rs.title }}</h2>
+                                <span class="text-uppercase">Months :</span>
+                                <h3>$ {{ rs.price }}</h3>
+                            </div>
+                            <ul>
+                                <h2>{{ rs.detail | safe }}</h2>
+                            </ul>
+                            </form>
+                            <a href="/paket/{{ rs.id }}/{{ rs.slug }}" class="primary-btn pricing-btn">Satın Al</a>
+                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     </section>
     <!-- About US Section End -->
