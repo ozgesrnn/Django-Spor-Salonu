@@ -33,12 +33,12 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('category/<int:id>/<slug:slug>/', views.category_products, name='category_products'),
     path('product/<int:id>/<slug:slug>/', views.product_detail, name='product_detail'),
-    path('paket/<int:id>/<slug:slug>/', views.paket_detail, name='paket_detail'),
     path('search/', views.product_search, name='product_search'),
     path('logout/', views.logout_view, name='logout_view'),
     path('login/', views.login_view, name='login_view'),
     path('join/', views.join_view, name='join_view'),
     path('faq/', views.faq, name='faq'),
+    path('paket/', views.paket, name='paket'),
 
 
 ]
