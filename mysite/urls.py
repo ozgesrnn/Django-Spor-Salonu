@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from home import views
-from order import views as orderviews
+from order import views as OrderViews
 
 urlpatterns = [
     path('', include('home.urls')), #herhangi bir şey yazmadanda çalışması için
@@ -40,7 +40,7 @@ urlpatterns = [
     path('join/', views.join_view, name='join_view'),
     path('faq/', views.faq, name='faq'),
     path('paket/', views.paket, name='paket'),
-    path('plancart/', orderviews.plancart, name='plancart'),
+    path('plancart/', OrderViews.plancart, name='plancart'),
 
 
 ]
