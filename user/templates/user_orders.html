@@ -1,0 +1,81 @@
+{% extends "homebase.html" %}
+
+{% block title %} Profile -{{ setting.title }}{% endblock %}
+{% block keywords %}{{ setting.keywords }}{% endblock %}
+{% block description %}{{ setting.description }}{% endblock %}
+
+{% block head %}
+    <link rel='shortcut icon' type='image/x-icon' href="{{ setting.icon.url }}"/>
+{% endblock %}
+
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+
+{% block content %}
+
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" data-setbg="uploads/images/breadcrumb-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb-text">
+                        <h2>User Orders</h2>
+                        <div class="bt-option">
+                            <a href="/home">Home</a>
+                            <span>User Orders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Contact Section Begin -->
+    <section class="contact-section spad">
+        <div class="container">
+            <div class="row">
+                  <div class="col-lg-4">
+                        <div class="section-title contact-title">
+                            {% include "user_panel.html" %}
+                             </div>
+                  </div>
+                <div class="col-lg-8">
+                    <div class="section-title contact-title">
+                    <span>User Order List </span>
+                        <table bgcolor="white" class="table" border="collapse">
+                        <thead>
+                        <tr>
+                            <th class="text-left">Id</th>
+                        <th class="text-left">First Name</th>
+                        <th class="text-left">Last Name</th>
+                        <th class="text-left">Total</th>
+                        <th class="text-left">Status</th>
+                        <th class="text-left">Date</th>
+                            <th class="text-left">Detail</th>
+                        </tr>
+                        {% for rs in orders %}
+                            <tr>
+                            <td class="text-left">{{ rs.id }}</td>
+                            <td class="text-left">{{ user.first_name }}</td>
+                            <td class="text-left">{{ user.last_name }}</td>
+                            <td class="text-left">{{ rs.amount }}</td>
+                            <td class="text-left">{{ rs.status }}</td>
+                            <td class="text-left">{{ rs.create_at }}</td>
+                            <td class="text-left"><a class="primary-btn" href="user/orderdetail/{{ rs.id }}">Detay</a> </td>
+                            </tr>
+
+                        {% endfor %}
+
+
+                        </thead>
+
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+     </div>
+        </div>
+    </section>
+{% endblock %}
