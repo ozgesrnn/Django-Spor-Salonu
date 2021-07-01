@@ -21,7 +21,7 @@
                         <h2>User Orders</h2>
                         <div class="bt-option">
                             <a href="/home">Home</a>
-                            <span>User Orders</span>
+                            <span>Order Detail</span>
                         </div>
                     </div>
                 </div>
@@ -45,22 +45,24 @@
                         <thead>
                         <tr>
                             <th class="text-left">Id</th>
-                        <th class="text-left">First Name</th>
-                        <th class="text-left">Last Name</th>
-                        <th class="text-left">Total</th>
+                        <th class="text-left">Paket Name</th>
+                        <th class="text-left">Price</th>
+                          <th class="text-left">Month</th>
+                        <th class="text-left">Amount</th>
                         <th class="text-left">Status</th>
                         <th class="text-left">Date</th>
-                            <th class="text-left">Detail</th>
+
                         </tr>
-                        {% for rs in orders %}
+                        {% for rs in orderitems %}
                             <tr>
                             <td class="text-left">{{ rs.id }}</td>
-                            <td class="text-left">{{ user.first_name }}</td>
-                            <td class="text-left">{{ user.last_name }}</td>
+                            <td class="text-left">{{ rs.paket.title }}</td>
+                            <td class="text-left">{{ rs.price }}</td>
+                                <td class="text-left">{{ rs.month }}</td>
                             <td class="text-left">{{ rs.amount }}</td>
                             <td class="text-left">{{ rs.status }}</td>
                             <td class="text-left">{{ rs.create_at }}</td>
-                            <td class="text-left"><a class="primary-btn" href="/user/orderdetail/{{ rs.id }}">Detay</a> </td>
+
                             </tr>
 
                         {% endfor %}
