@@ -53,9 +53,8 @@
                                 <h2>{{ rs.detail | safe }}</h2>
                             </ul>
 
-                            <a href="/order/orderproduct/" class="primary-btn pricing-btn">Satın Al</a>
+                            <a href="/order/orderproduct/?product_id={{ rs.id }}" class="primary-btn pricing-btn">Satın Al</a>
 
-                            <a href="#" class="thumb-icon"><i class="fa fa-picture-o"></i></a>
                         </div>
                     </div>
                 {% endfor %}
