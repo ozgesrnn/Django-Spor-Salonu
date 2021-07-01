@@ -40,7 +40,7 @@ urlpatterns = [
     path('join/', views.join_view, name='join_view'),
     path('faq/', views.faq, name='faq'),
     path('paket/', views.paket, name='paket'),
-    path('plancart/', OrderViews.plancart, name='plancart'),
+
 
 
 ]
